@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "137178150994",
+    "firebase_url": "https://app-horaire.firebaseio.com",
+    "project_id": "app-horaire",
+    "storage_bucket": "app-horaire.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137178150994:android:688f268b78986b9ce1878b",
+        "android_client_info": {
+          "package_name": "com.horaire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137178150994-s1tpsm21230t1i4l2onimbeopedr53ss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1vRdgUOnEqCcjSFrtwerQcsXeyEtM6hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137178150994-s1tpsm21230t1i4l2onimbeopedr53ss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137178150994:android:1932085da343acaee1878b",
+        "android_client_info": {
+          "package_name": "com.lbg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137178150994-s1tpsm21230t1i4l2onimbeopedr53ss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1vRdgUOnEqCcjSFrtwerQcsXeyEtM6hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137178150994-s1tpsm21230t1i4l2onimbeopedr53ss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
