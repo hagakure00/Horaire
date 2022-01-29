@@ -1215,7 +1215,9 @@ buildBottomSheet () {
                       Row(children: [
                         Text("Heures total du mois : ", style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 15,decoration: TextDecoration.none))),
                         const SizedBox(width: 10),
-                        Text( totalheureMois.toString(), style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,decoration: TextDecoration.none))),
+                        SizedBox(
+                           width: 60,
+                            child: Text( totalheureMois.toString(), style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,decoration: TextDecoration.none,overflow: TextOverflow.ellipsis)))),
                       ],),
                       const SizedBox(height: 8),
                       Row(children: [
