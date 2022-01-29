@@ -203,9 +203,14 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: 15),
-                      // titre
-                      Text(data.mois,
-                          style: GoogleFonts.oswald(textStyle: const TextStyle(color: black,fontSize: 19,letterSpacing: 0.5,height: 1,decoration: TextDecoration.none))),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          // titre
+                          Text(data.mois,
+                              style: GoogleFonts.oswald(textStyle: const TextStyle(color: black,fontSize: 19,letterSpacing: 0.5,height: 1,decoration: TextDecoration.none))),
+                        ],
+                      ),
                       const SizedBox(height: 10),
                       Padding(
                         padding: const EdgeInsets.only(left: 20),
@@ -232,10 +237,8 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             const Icon(Ionicons.stats_chart_outline,color: primary,size: 18),
                             const SizedBox(width: 10),
-
                             Text("Modulation de fin de mois :",
                                 style: GoogleFonts.poppins(textStyle: const TextStyle(color: black,fontSize: 14,height: 2,decoration: TextDecoration.none))),
-
                             const SizedBox(width: 10),
                             SizedBox(
                               width: 60,
@@ -251,13 +254,6 @@ class _HomePageState extends State<HomePage> {
                       ),],),
                 ],
               ),
-
-              (data.notifs1.isNotEmpty || data.notifs2.isNotEmpty || data.notifs3.isNotEmpty || data.notifs4.isNotEmpty || data.notifs5.isNotEmpty)
-                  ? const Padding(
-                padding: EdgeInsets.only(top: 10,right: 15),
-                child: Icon(Icons.message,color: grey,size: 25),
-              )
-                  : Container(),
             ],
           ),
         ),
@@ -303,9 +299,11 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const SizedBox(height: 15),
-                      // titre
-                      Text(snapshotData.docs[index]['mois'],
-                          style: GoogleFonts.oswald(textStyle: const TextStyle(color: black,fontSize: 19,letterSpacing: 0.5,height: 1,decoration: TextDecoration.none))),
+                      Row(children: [
+                        // titre
+                        Text(snapshotData.docs[index]['mois'],
+                            style: GoogleFonts.oswald(textStyle: const TextStyle(color: black,fontSize: 19,letterSpacing: 0.5,height: 1,decoration: TextDecoration.none))),
+                      ],),
                       const SizedBox(height: 10),
                       Padding(
                         padding: const EdgeInsets.only(left: 20),
@@ -351,13 +349,6 @@ class _HomePageState extends State<HomePage> {
                       ),],),
                 ],
               ),
-
-              (data.notifs1.isNotEmpty || data.notifs2.isNotEmpty || data.notifs3.isNotEmpty || data.notifs4.isNotEmpty || data.notifs5.isNotEmpty)
-                  ? const Padding(
-                padding: EdgeInsets.only(top: 10,right: 15),
-                child: Icon(Icons.message,color: grey,size: 25),
-              )
-                  : Container(),
             ],
           ),
         ),

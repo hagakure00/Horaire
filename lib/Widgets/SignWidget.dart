@@ -181,7 +181,7 @@ class _SignWidgetState extends State<SignWidget> {
     validator: (value) => value != passController.text ? 'Doit etre identique au mot de passe' : null,
   );
 
-  Widget buildButton () => Row(
+  Widget buildButton () => (MediaQuery.of(context).size.width > 400) ? Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         // button inscription
@@ -201,6 +201,33 @@ class _SignWidgetState extends State<SignWidget> {
                     )])),
         ),
 
+        // button inscription
+        ElevatedButton(
+            onPressed: () async {
+              sign();
+            },
+            style: ElevatedButton.styleFrom(primary: primary),
+            child: Text("S'inscrire",style: GoogleFonts.poppins( textStyle: const TextStyle(color: white,fontSize: 13,decoration: TextDecoration.none)),)
+        )]) : Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        // button inscription
+        ElevatedButton(
+          onPressed: () async {},
+          style: ElevatedButton.styleFrom(primary: white),
+          child: RichText(
+              text: TextSpan(
+                  recognizer: TapGestureRecognizer()..onTap = widget.onClickedLogIn,
+                  text: 'Déja un compte ?  ',
+                  style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 13,decoration: TextDecoration.none)),
+                  children: [
+                    TextSpan(
+                      recognizer: TapGestureRecognizer()..onTap = widget.onClickedLogIn,
+                      text: "Se connecter",
+                      style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 13,decoration: TextDecoration.none)),
+                    )])),
+        ),
+        const SizedBox(height: 10),
         // button inscription
         ElevatedButton(
             onPressed: () async {

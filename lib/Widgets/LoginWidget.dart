@@ -179,7 +179,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     ],
   );
 
-  Widget buildButton() => Row(
+  Widget buildButton() => (MediaQuery.of(context).size.width > 400) ? Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       // button inscription
@@ -209,7 +209,37 @@ class _LoginWidgetState extends State<LoginWidget> {
       ),
 
     ],
-  );
+  ) : Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // button inscription
+          ElevatedButton(
+            onPressed: () async {},
+            style: ElevatedButton.styleFrom(primary: white),
+            child: RichText(
+                text: TextSpan(
+                    recognizer: TapGestureRecognizer()..onTap = widget.onClickedSignUp,
+                    text: 'pas de compte ?  ',
+                    style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 13,decoration: TextDecoration.none)),
+                    children: [
+                      TextSpan(
+                        recognizer: TapGestureRecognizer()..onTap = widget.onClickedSignUp,
+                        text: "S'inscrire",
+                        style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 13,decoration: TextDecoration.none)),
+                      )])),
+          ),
+          const SizedBox(height: 10),
+          // button connection
+          ElevatedButton(
+              onPressed: () async {
+                loginIn();
+              },
+              style: ElevatedButton.styleFrom(primary: primary),
+              child: Text("Se Connecter", style: GoogleFonts.poppins( textStyle: const TextStyle(color: white,fontSize: 13,decoration: TextDecoration.none)),)
+          ),
+
+        ],
+      );
 
   passPerduDialog(BuildContext context) {
     return showDialog(context: context, builder: (context){
