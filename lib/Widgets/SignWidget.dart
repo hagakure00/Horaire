@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:horaire/Animation/FadeAnimation.dart';
 import 'package:horaire/Theme/colors.dart';
 import 'HelpMessage.dart';
 
@@ -45,19 +46,23 @@ class _SignWidgetState extends State<SignWidget> {
           child: SingleChildScrollView(
             child: Form(
               key: formKey,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(children: [
-                  buildHeader(),
-                  const SizedBox(height: 30),
-                  buildEmail(),
-                  const SizedBox(height: 30),
-                  buildPass(),
-                  const SizedBox(height: 30),
-                  buildVerifPass(),
-                  const SizedBox(height: 40),
-                  buildButton()
-                ]),
+              child: FadeAnimation(
+                delay: 200,
+                isHorizontal: true,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(children: [
+                    buildHeader(),
+                    const SizedBox(height: 30),
+                    buildEmail(),
+                    const SizedBox(height: 30),
+                    buildPass(),
+                    const SizedBox(height: 30),
+                    buildVerifPass(),
+                    const SizedBox(height: 40),
+                    buildButton()
+                  ]),
+                ),
               ),
             ),
           ),
@@ -181,7 +186,8 @@ class _SignWidgetState extends State<SignWidget> {
     validator: (value) => value != passController.text ? 'Doit etre identique au mot de passe' : null,
   );
 
-  Widget buildButton () => (MediaQuery.of(context).size.width > 400) ? Row(
+  Widget buildButton () => (MediaQuery.of(context).size.width > 370)
+      ? Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         // button inscription
@@ -208,7 +214,8 @@ class _SignWidgetState extends State<SignWidget> {
             },
             style: ElevatedButton.styleFrom(primary: primary),
             child: Text("S'inscrire",style: GoogleFonts.poppins( textStyle: const TextStyle(color: white,fontSize: 13,decoration: TextDecoration.none)),)
-        )]) : Column(
+        )])
+      : Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         // button inscription

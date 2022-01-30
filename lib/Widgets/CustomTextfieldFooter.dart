@@ -30,15 +30,20 @@ class _CustomTextFieldFooterState extends State<CustomTextFieldFooter> {
           SizedBox(
             width: MediaQuery.of(context).size.width /4,
             height: 30,
-            child: TextFormField(
-              controller: widget.controllerTot,
-              keyboardType: TextInputType.number,
-              textInputAction: TextInputAction.done,
-              style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 14,decoration: TextDecoration.none)),
-              decoration: InputDecoration(
-                fillColor: Colors.white,
-                filled: true,
-                labelText: widget.labelTextResult
+            child: IgnorePointer(
+              child: TextFormField(
+                controller: widget.controllerTot,
+                keyboardType: TextInputType.number,
+                textInputAction: TextInputAction.done,
+                style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 15,letterSpacing: 1,decoration: TextDecoration.none)),
+                decoration: InputDecoration(
+                    border: const OutlineInputBorder(),
+                    enabledBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white, width: 0.0)),
+                  fillColor: Colors.white,
+                  filled: true,
+                  labelText: widget.labelTextResult
+                ),
               ),
             ),
           ),

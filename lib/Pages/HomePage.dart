@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               width: 60,
                               child: Text(data.totalHeureDuMois,
-                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: primary,fontSize: 14,height: 1.8,decoration: TextDecoration.none,overflow: TextOverflow.ellipsis))),
+                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: primary,fontSize: 14,height: 1.8,letterSpacing: 1,decoration: TextDecoration.none,overflow: TextOverflow.ellipsis))),
                             ),
                           ],
                         ),
@@ -244,9 +244,9 @@ class _HomePageState extends State<HomePage> {
                               width: 60,
                               child: (data.totalModuleDuMois.contains('-'))
                                   ? Text(data.totalModuleDuMois,
-                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: red,fontSize: 14,height: 1.8,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis)))
+                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: red,fontSize: 14,height: 1.8,letterSpacing: 1,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis)))
                                   : Text(data.totalModuleDuMois,
-                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: primary,fontSize: 14,height: 1.8,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis))),
+                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: primary,fontSize: 14,height: 1.8,letterSpacing: 1,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis))),
 
 
                             ),
@@ -318,7 +318,7 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               width: 60,
                               child: Text(snapshotData.docs[index]['totalHeureDuMois'],
-                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: primary,fontSize: 14,height: 1.8,decoration: TextDecoration.none,overflow: TextOverflow.ellipsis))),
+                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: primary,fontSize: 14,height: 1.8,letterSpacing: 1,decoration: TextDecoration.none,overflow: TextOverflow.ellipsis))),
                             ),
                           ],
                         ),
@@ -339,9 +339,9 @@ class _HomePageState extends State<HomePage> {
                               width: 60,
                               child: (snapshotData.docs[index]['totalModuleDuMois'].contains('-'))
                                   ? Text(snapshotData.docs[index]['totalModuleDuMois'],
-                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: red,fontSize: 14,height: 1.8,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis)))
+                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: red,fontSize: 14,height: 1.8,letterSpacing: 1,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis)))
                                   : Text(snapshotData.docs[index]['totalModuleDuMois'],
-                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: primary,fontSize: 14,height: 1.8,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis))),
+                                  style: GoogleFonts.poppins(textStyle: const TextStyle(color: primary,fontSize: 14,height: 1.8,letterSpacing: 1,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis))),
 
 
                             ),

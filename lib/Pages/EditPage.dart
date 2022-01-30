@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:horaire/Animation/FadeAnimation.dart';
 import 'package:horaire/Models/HoraireModel.dart';
@@ -972,7 +973,13 @@ class _EditPageState extends State<EditPage> {
   Widget build(BuildContext context) {
 
     final tabNewsSelect = <Widget>[const Tab(text: 'S1'), const Tab(text: 'S2'), const Tab(text: 'S3'), const Tab(text: 'S4'), const Tab(text: 'S5'),];
-    final tabNewsView = <Widget>[buildSemaine1(), buildSemaine2(), buildSemaine3(), buildSemaine4(), buildSemaine5(),];
+    final tabNewsView = <Widget>[
+      (buildSemaine1 != null) ? buildSemaine1() : const SpinKitRipple(color: primary, size: 100.0),
+      (buildSemaine2 != null) ? buildSemaine2() : const SpinKitRipple(color: primary, size: 100.0),
+      (buildSemaine3 != null) ? buildSemaine3() : const SpinKitRipple(color: primary, size: 100.0),
+      (buildSemaine4 != null) ? buildSemaine4() : const SpinKitRipple(color: primary, size: 100.0),
+      (buildSemaine5 != null) ? buildSemaine5() : const SpinKitRipple(color: primary, size: 100.0),
+    ];
     return DefaultTabController(
         length: tabNewsSelect.length,
         child: Scaffold(
@@ -1209,7 +1216,7 @@ buildBottomSheet () {
                         children: [
                           Text("Modulation précédente : ", style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 15,decoration: TextDecoration.none))),
                           const SizedBox(width: 10),
-                          Text( widget.horaire.module, style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,decoration: TextDecoration.none))),
+                          Text( widget.horaire.module, style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,letterSpacing: 1,decoration: TextDecoration.none))),
                         ],),
                       const SizedBox(height: 8),
                       Row(children: [
@@ -1217,7 +1224,7 @@ buildBottomSheet () {
                         const SizedBox(width: 10),
                         SizedBox(
                            width: 60,
-                            child: Text( totalheureMois.toString(), style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,decoration: TextDecoration.none,overflow: TextOverflow.ellipsis)))),
+                            child: Text( totalheureMois.toString(), style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,letterSpacing: 1,decoration: TextDecoration.none,overflow: TextOverflow.ellipsis)))),
                       ],),
                       const SizedBox(height: 8),
                       Row(children: [
@@ -1225,8 +1232,11 @@ buildBottomSheet () {
                         const SizedBox(width: 10),
                         SizedBox(
                            width: 60,
-                            child: Text( totalmoduleMois.toString(), style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis)))),
-                      ],),
+                            child:  (totalmoduleMois.toString().contains('-'))
+                                ? Text( totalmoduleMois.toString(), style: GoogleFonts.poppins( textStyle: const TextStyle(color: red,fontSize: 15,letterSpacing: 1,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis)))
+                                : Text( totalmoduleMois.toString(), style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,letterSpacing: 1,decoration: TextDecoration.none, overflow: TextOverflow.ellipsis)))),
+
+          ],),
                     ]),
                   ),
 

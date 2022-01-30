@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:horaire/Animation/FadeAnimation.dart';
 import 'package:horaire/Theme/colors.dart';
 import 'HelpMessage.dart';
 
@@ -49,18 +50,22 @@ class _LoginWidgetState extends State<LoginWidget> {
           child: SingleChildScrollView(
             child: Form(
               key: formKey,
-              child: Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Column(children: [
-                  buildHeader(),
-                  const SizedBox(height: 30),
-                  buildEmail(),
-                  const SizedBox(height: 30),
-                  buildPass(),
-                  buildPassPerdu(),
-                  const SizedBox(height: 30),
-                  buildButton(),
-                ]),
+              child: FadeAnimation(
+                delay: 200,
+                isHorizontal: true,
+                child: Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(children: [
+                    buildHeader(),
+                    const SizedBox(height: 30),
+                    buildEmail(),
+                    const SizedBox(height: 30),
+                    buildPass(),
+                    buildPassPerdu(),
+                    const SizedBox(height: 30),
+                    buildButton(),
+                  ]),
+                ),
               ),
             ),
           ),
@@ -179,8 +184,8 @@ class _LoginWidgetState extends State<LoginWidget> {
     ],
   );
 
-  Widget buildButton() => (MediaQuery.of(context).size.width > 400) ? Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  Widget buildButton() => (MediaQuery.of(context).size.width > 370)
+      ? Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       // button inscription
       ElevatedButton(
@@ -198,7 +203,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                       style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 13,decoration: TextDecoration.none)),
                   )])),
       ),
-
       // button connection
       ElevatedButton(
           onPressed: () async {
@@ -206,10 +210,8 @@ class _LoginWidgetState extends State<LoginWidget> {
           },
           style: ElevatedButton.styleFrom(primary: primary),
           child: Text("Se Connecter", style: GoogleFonts.poppins( textStyle: const TextStyle(color: white,fontSize: 13,decoration: TextDecoration.none)),)
-      ),
-
-    ],
-  ) : Column(
+      ),])
+      : Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // button inscription

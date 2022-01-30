@@ -20,6 +20,7 @@ dependencies:
   google_fonts: ^2.2.0
   ionicons: ^0.1.2
   simple_animations: ^4.0.1
+  introduction_screen: ^2.1.0
 
 dev_dependencies:
   flutter_test:

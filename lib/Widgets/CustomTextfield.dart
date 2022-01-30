@@ -66,7 +66,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 onChanged: widget.functionArr,
                 keyboardType: TextInputType.number,
                 textInputAction: TextInputAction.done,
-                style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 14,decoration: TextDecoration.none)),
+                style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 14,letterSpacing: 1,decoration: TextDecoration.none)),
                 decoration: const InputDecoration(
                   fillColor: Colors.white,
                   filled: true,
@@ -82,7 +82,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 onChanged: widget.functionDep,
                 keyboardType: TextInputType.number,
                 textInputAction: TextInputAction.done,
-                style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 14,decoration: TextDecoration.none)),
+                style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 14,letterSpacing: 1,decoration: TextDecoration.none)),
                 decoration: const InputDecoration(
                   fillColor: Colors.white,
                   filled: true,
@@ -97,7 +97,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 onChanged: widget.functionTot,
                 keyboardType: TextInputType.number,
                 textInputAction: TextInputAction.done,
-                style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 14,decoration: TextDecoration.none)),
+                style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 14,letterSpacing: 1,decoration: TextDecoration.none)),
                 decoration: InputDecoration(
                   fillColor: Colors.white,
                   filled: true,

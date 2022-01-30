@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:horaire/Pages/IntroPage.dart';
 import 'package:horaire/Theme/colors.dart';
 import 'Pages/AuthPage.dart';
 import 'Pages/HomePage.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         primarySwatch: Colors.blue,
       ),
-      home: const MainPage(),
+      home: const IntroPage(),
     );
   }
 }
