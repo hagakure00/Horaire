@@ -1214,9 +1214,11 @@ buildBottomSheet () {
                     child: Column(children: [
                       Row(
                         children: [
-                          Text("Modulation précédente : ", style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 15,decoration: TextDecoration.none))),
+                          Text("Modulation du mois précédent : ", style: GoogleFonts.poppins( textStyle: const TextStyle(color: black,fontSize: 15,decoration: TextDecoration.none))),
                           const SizedBox(width: 10),
-                          Text( widget.horaire.module, style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,letterSpacing: 1,decoration: TextDecoration.none))),
+                          (widget.horaire.module.toString().contains('-'))
+                          ? Text( widget.horaire.module, style: GoogleFonts.poppins( textStyle: const TextStyle(color: red,fontSize: 15,letterSpacing: 1,decoration: TextDecoration.none)))
+                         : Text( widget.horaire.module, style: GoogleFonts.poppins( textStyle: const TextStyle(color: primary,fontSize: 15,letterSpacing: 1,decoration: TextDecoration.none))),
                         ],),
                       const SizedBox(height: 8),
                       Row(children: [

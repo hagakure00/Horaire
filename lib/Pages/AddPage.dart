@@ -481,7 +481,7 @@ class _AddPageState extends State<AddPage> {
           Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HomePage()));
         },
         style: ElevatedButton.styleFrom(primary: primary),
-        child: Text("Envoyer",style: GoogleFonts.poppins( textStyle: const TextStyle(color: white,fontSize: 13,decoration: TextDecoration.none)),)
+        child: Text("Valider",style: GoogleFonts.poppins( textStyle: const TextStyle(color: white,fontSize: 13,decoration: TextDecoration.none)),)
     );
   }
 }
